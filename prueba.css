@@ -1,0 +1,268 @@
+body {
+    background-color: #222222;
+    margin: 0px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo para la galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    max-width: 70%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.item {
+    text-align: center;
+    border: 2px solid #9648aa;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(199, 199, 198);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.button-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.enlargeButton {
+    background-color: #9648aa;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Pathway Gothic One", sans-serif;
+    font-weight: 400; 
+}
+
+.viewButton:hover, .enlargeButton:hover {
+    opacity: 0.8;
+}
+
+@keyframes glow {
+    to {
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #d25ed4, 0 0 16px #d25ed4, 0 0 20px #d25ed4, 0 0 24px #d25ed4, 0 0 28px #d25ed4;
+    }
+  }
+  
+  .enlargeButton{
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 6px #292736, 0 0 8px #292736, 0 0 10px #292736, 0 0 12px #292736, 0 0 14px #292736;
+    animation: glow .59s infinite alternate;
+  }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#modalImage {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+#modalContent {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Opcional: Para agregar un borde o sombra al contenido */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modalImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+}
+
+#pdfViewer {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 100%;
+        padding: 20px;
+        margin: 20px auto;
+        
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        padding: 20px;
+        margin: 20px auto; 
+    }
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 90%;
+    right: 20px;
+    background-color: #9648aa;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #9648aa;
+    transform: scale(1.1);
+}
+.floating-button i {
+    margin: 0;
+}
+
+/*boton impresion*/
+.print-btn {
+    position: fixed;
+    bottom: 20px; 
+    left: 20px;
+    background-color: #c7c6c7; 
+    border-radius: 50%;
+    border: none;
+    padding: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .print-btn:hover {
+    background-color: #7a2c8e;
+    transform: scale(1.1); 
+  }
+  
+  .print-icon {
+    width: 40px; 
+    height: 40px; 
+  }
+  
+  @media (max-width: 767px) {
+    .print-btn {
+      display: flex;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .print-btn {
+      display: none; 
+    }
+  }
+
+footer{
+    background-color: #9648aa;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Pathway Gothic One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+  /* Estilo del botón flotante */
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #9648aa;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 40px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  
+  .scroll-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 600px) {
+    .scroll-to-top {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+  }
